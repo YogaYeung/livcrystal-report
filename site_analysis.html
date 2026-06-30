@@ -108,41 +108,34 @@ td:first-child{font-weight:800;color:var(--ink);white-space:nowrap}
 <div class="wrap">
 
   <div class="stats">
-    <div class="stat"><div class="n red">2</div><div class="l">致命级问题<br>直接掉转化/信任</div></div>
+    <div class="stat"><div class="n amber">1</div><div class="l">首要修复项<br>全屏弹窗盖首屏</div></div>
     <div class="stat"><div class="n amber">5</div><div class="l">体验优化项<br>影响高级感/流畅度</div></div>
     <div class="stat"><div class="n teal small">1.35</div><div class="l">促销弹窗最低对比度<br>AA 需 ≥4.5</div></div>
     <div class="stat"><div class="n mint small">5.0★</div><div class="l">PDP 实测评分<br>14 评价 · 31 sold</div></div>
   </div>
 
   <div class="callout">
-    <b>一句话结论：</b>这是一个<b>底子相当扎实</b>的站——产品详情内容丰富、社会证明（评价+买家秀）做得到位、追踪埋点齐全，远好于多数同类水晶站。但有<b>两处硬伤直接拦在转化/信任的临门一脚</b>：①英文站的结账按钮居然是中文（"PayPal 結帳/借记卡或信用卡"），②落地瞬间两个全屏弹窗叠着把首屏产品全遮住。先修这两条，其余是打磨高级感的体验项。下面每条都配实测截图，一眼可验。
+    <b>一句话结论：</b>这是一个<b>底子相当扎实</b>的站——产品详情内容丰富、社会证明（评价+买家秀）做得到位、追踪埋点齐全，远好于多数同类水晶站。最该先动的一处：<b>落地瞬间全屏弹窗把首屏产品整个盖住</b>，用户得先关弹窗才看得到货（首访/清缓存时还会叠一层促销弹窗，需连关两次，但非每次必现）。先优化这条，其余是打磨高级感的体验项。下面每条都配实测截图，一眼可验。
   </div>
 
-  <!-- 致命级 -->
+  <!-- 首要 -->
   <div class="sec">
-    <div class="sec-h"><span class="ico">🚨</span><h2>致命级（先修，直接掉转化/信任）</h2></div>
+    <div class="sec-h"><span class="ico">🚨</span><h2>首要修复（影响首屏转化）</h2></div>
 
     <div class="card"><div class="card-grid">
       <div class="card-main">
-        <span class="badge b-fatal">致命 · #1</span>
-        <h3>英文站的结账区按钮显示中文</h3>
-        <div class="kv">PDP 点加购后，整排支付按钮是<strong>中文</strong>：「PayPal <strong>結帳</strong>」「<strong>借记卡或信用卡</strong>」「<strong>技术支持提供方</strong>」。面向英语客户、临门一脚的结账环节冒出中文，会被直觉判定为<strong>山寨 / 诈骗 dropshipper</strong>，信任瞬间崩。这是 UEESHOP 语言包泄漏，不是用户设置。</div>
-        <div class="evi">实测 Nature's Heart PDP 支付区文案：<b>PayPal 結帳 · 借记卡或信用卡 · 技术支持提供方</b></div>
-        <div class="fix"><b>建议：</b>后台把支付/结账模块语言强制设为 English；全站再审一遍残留中文 UI（按钮、提示、占位符）。这是最高优先级，影响所有要付款的客户。</div>
+        <span class="badge b-high">严重 · #1</span>
+        <h3>落地即全屏弹窗盖住首屏（首访还会叠第二层）</h3>
+        <div class="kv">进站立刻弹出<strong>全屏「FOR VIP USERS 10% OFF」订阅弹窗</strong>，把首屏黄金位整个盖住，用户必须先关弹窗才看得到产品——桌面、移动端复测都是如此。<strong>首次访问 / 清缓存时还会叠一层促销活动弹窗</strong>（operation_user_popup2），需连关两次；但该第二层按 cookie 只对部分会话触发，<strong>并非每次必现</strong>（复访通常只剩一层）。</div>
+        <div class="evi">复测取证：复访 <b>modalCount=1</b>（仅 ly_newsletter「10% OFF」全屏）；首访曾截到 <b>2 层叠加</b>（operation_user_popup2 z9999 + ly_newsletter）。结论：单层弹窗盖首屏=稳定存在，双层叠加=间歇</div>
+        <div class="fix"><b>建议：</b>弹窗延迟到滚动 30% 或停留 8s 再出；同一会话只弹一个，绝不叠加；订阅优惠改成不挡视线的底部 bar，让访客一进站先看到产品。</div>
       </div>
-      <div class="card-shot"><div><div class="browser"><div class="bar"><i class="dot1"></i><i class="dot2"></i><i class="dot3"></i></div><img src="assets/pdp-atc-result.jpeg" alt="中文结账按钮"></div><div class="shot-cap">PayPal 結帳 / 借记卡或信用卡 · 实拍</div></div></div>
+      <div class="card-shot"><div><div class="browser"><div class="bar"><i class="dot1"></i><i class="dot2"></i><i class="dot3"></i></div><img src="assets/home-desktop-hero.jpeg" alt="进站全屏弹窗盖首屏"></div><div class="shot-cap">进站弹窗盖首屏 · 首访曾叠两层</div></div></div>
     </div></div>
 
-    <div class="card"><div class="card-grid">
-      <div class="card-main">
-        <span class="badge b-fatal">致命 · #2</span>
-        <h3>落地瞬间双层全屏弹窗叠着遮住首屏</h3>
-        <div class="kv">进站立刻弹出<strong>两个全屏弹窗叠加</strong>：前层「FOR VIP USERS 10% OFF」订阅弹窗 + 后层促销活动弹窗。用户要<strong>连关两次</strong>才能看到产品。最值钱的首屏黄金位被双重遮挡，跳出率必然升高。</div>
-        <div class="evi">实测 modalCount=4，其中 2 个全屏：<b>operation_user_popup2</b>(z-index 9999, 促销) + <b>ly_newsletter_35</b>(10% OFF 订阅)</div>
-        <div class="fix"><b>建议：</b>弹窗延迟到滚动 30% 或停留 8s 再出；同一会话只弹一个；绝不叠加。订阅优惠可改成不挡视线的底部 bar。</div>
-      </div>
-      <div class="card-shot"><div><div class="browser"><div class="bar"><i class="dot1"></i><i class="dot2"></i><i class="dot3"></i></div><img src="assets/home-desktop-hero.jpeg" alt="双层弹窗"></div><div class="shot-cap">进站即双弹 · 后层还露出一个 X</div></div></div>
-    </div></div>
+    <div class="callout" style="border-left:4px solid #4a9; background:rgba(60,160,140,.08)">
+      <b>📝 诚实修正（原「结账按钮中文」一条已撤销）：</b>初版报告把 PDP 支付区的「PayPal 結帳 / 借记卡或信用卡」列为致命级。复核后确认<b>这是分析环境的语言假象，不是网站 bug</b>——PayPal / Google Pay 这排按钮由第三方 SDK 用 iframe 实时渲染，<b>按访客浏览器/IP 的语言自动本地化</b>。分析当时浏览器 locale 为中文，故截到中文；真实英语市场访客看到的是英文（PayPal Checkout / Debit or Credit Card / Powered by PayPal），站点本身无需修改。验证：把浏览器语言切到中文或用国内 IP 重开该 PDP，按钮即变中文，证明随访客语言走。
+    </div>
   </div>
 
   <!-- 对比度 -->
@@ -165,11 +158,11 @@ td:first-child{font-weight:800;color:var(--ink);white-space:nowrap}
 
     <div class="card"><div class="card-grid">
       <div class="card-main">
-        <span class="badge b-mid">体验 · 移动端</span>
-        <h3>移动列表 3 列过挤，产品名被截断</h3>
-        <div class="kv">390px 视口下列表页排 <strong>3 列</strong>，单图仅约 110px，产品名截断成「Celestial Phanto...」「Wooden Shado...」，星级还换行排得凌乱。移动是跨境流量大头，识别度受损。</div>
-        <div class="evi">实测 390px /collections/energy-bracelet：3 列网格，name 截断，star rating 多行换行</div>
-        <div class="fix"><b>建议：</b>移动端改 <strong>2 列</strong>；产品名允许两行；星级 + 评价数压到单行。</div>
+        <span class="badge b-mid">体验 · 移动端（可选）</span>
+        <h3>移动列表 3 列，长名称会截断（细节打磨）</h3>
+        <div class="kv">390px 视口下列表页排 <strong>3 列</strong>，单卡片宽约 <strong>99px</strong>。整体布局正常可用，只是较长的产品名会截断成「Wooded Shado...」，星级也分两行排。3 列在移动电商常见、并非硬伤，若想再精致一点可考虑改 2 列。</div>
+        <div class="evi">复测 390px /collections/energy-bracelet：3 列网格（卡片宽 99px），长 name 截断，star rating 换行</div>
+        <div class="fix"><b>可选建议：</b>若追求更高识别度，移动端改 <strong>2 列</strong>、产品名允许两行、星级 + 评价数压到单行；维持 3 列也可接受。</div>
       </div>
       <div class="card-shot"><div><div class="phone"><img src="assets/mobile-collection.jpeg" alt="移动列表过挤"></div><div class="shot-cap">3 列 · 名称截断</div></div></div>
     </div></div>
@@ -271,10 +264,9 @@ td:first-child{font-weight:800;color:var(--ink);white-space:nowrap}
     <table>
       <thead><tr><th>优先级</th><th>问题</th><th>动作</th></tr></thead>
       <tbody>
-        <tr><td><span class="pri p1">P0</span></td><td>结账区中文按钮</td><td>后台支付/结账语言强制 English，全站清残留中文 UI</td></tr>
-        <tr><td><span class="pri p1">P0</span></td><td>双层全屏弹窗叠加</td><td>延迟触发 + 同会话单弹 + 不叠加，优惠改底部 bar</td></tr>
+        <tr><td><span class="pri p1">P0</span></td><td>全屏弹窗盖首屏（首访偶叠两层）</td><td>延迟触发 + 同会话单弹 + 不叠加，优惠改底部 bar</td></tr>
         <tr><td><span class="pri p2">P1</span></td><td>促销弹窗深灰字看不清</td><td>弹窗内文字改白/浅金，对比度→4.5+</td></tr>
-        <tr><td><span class="pri p2">P1</span></td><td>移动列表 3 列过挤</td><td>改 2 列，产品名两行，星级单行</td></tr>
+        <tr><td><span class="pri p3">P2</span></td><td>移动列表 3 列（长名截断·可选）</td><td>可改 2 列、产品名两行、星级单行；维持 3 列亦可</td></tr>
         <tr><td><span class="pri p2">P1</span></td><td>CTA 配色偏离品牌</td><td>蓝按钮换紫/香槟金，呼应 logo</td></tr>
         <tr><td><span class="pri p3">P2</span></td><td>拼写 lnformation</td><td>改 Information</td></tr>
         <tr><td><span class="pri p3">P2</span></td><td>javascript:void 链接</td><td>VIEW ALL PRODUCTS 指真链，展示徽章去 a 标签</td></tr>
