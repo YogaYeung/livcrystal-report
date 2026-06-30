@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIV CRYSTAL 品牌策略 — 品牌策略方案 · 溢价立得住</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>/* ═══════════════════════════════════════════════
+   Canva-Inspired Report Theme
+   ═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Canva 调色盘 */
+    --canva-navy: #2B3A67;
+    --canva-teal: #00B4D8;
+    --canva-coral: #FF6B6B;
+    --canva-mint: #06D6A0;
+    --canva-amber: #FFD166;
+    --canva-purple: #7B68EE;
+    --canva-pink: #FF85A1;
+
+    /* 文字色阶 */
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a4a68;
+    --text-muted: #8b8ba3;
+
+    /* 背景色阶 */
+    --bg-white: #ffffff;
+    --bg-light: #f8f9fc;
+    --bg-card: #f0f2f8;
+    --border-color: #e4e7f0;
+
+    /* 字体 */
+    --font: 'Plus Jakarta Sans', 'Noto Sans SC', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* 圆角与阴影 */
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+    --shadow-card: 0 2px 12px rgba(43, 58, 103, 0.06);
+    --shadow-hover: 0 8px 24px rgba(43, 58, 103, 0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@page {
+    size: A4;
+    margin: 1.5cm 2cm;
+}
+
+body {
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-primary);
+    background: var(--bg-white);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════════════════════
+   封面 — 紧凑型 + 动态 Blob 动画背景
+   ═══════════════════════════════════════════════ */
+
+.cover {
+    page-break-after: always;
+    height: 360px;
+    background: var(--canva-navy);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 动画 Blob 背景层 */
+.cover-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    filter: blur(60px);
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.35;
+}
+
+.blob-1 {
+    width: 220px;
+    height: 220px;
+    background: var(--canva-teal);
+    top: -40px;
+    right: -20px;
+    animation: float1 8s ease-in-out infinite;
+}
+
+.blob-2 {
+    width: 180px;
+    height: 180px;
+    background: var(--canva-coral);
+    bottom: -30px;
+    left: -10px;
+    animation: float2 10s ease-in-out infinite;
+}
+
+.blob-3 {
+    width: 140px;
+    height: 140px;
+    background: var(--canva-purple);
+    top: 40%;
+    left: 20%;
+    animation: float3 12s ease-in-out infinite;
+}
+
+.blob-4 {
+    width: 100px;
+    height: 100px;
+    background: var(--canva-amber);
+    top: 20%;
+    right: 25%;
+    animation: float4 9s ease-in-out infinite;
+}
+
+@keyframes float1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-30px, 20px) scale(1.1); }
+    66% { transform: translate(20px, -15px) scale(0.95); }
+}
+
+@keyframes float2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(25px, -20px) scale(1.08); }
+    66% { transform: translate(-15px, 25px) scale(0.92); }
+}
+
+@keyframes float3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, 15px) scale(1.15); }
+}
+
+@keyframes float4 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-20px, -20px) scale(1.1); }
+}
+
+.cover-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem 3rem;
+}
+
+.cover-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--canva-teal);
+    border: 1.5px solid rgba(0, 180, 216, 0.5);
+    padding: 4px 16px;
+    border-radius: 99px;
+    margin-bottom: 1.2rem;
+    backdrop-filter: blur(4px);
+    background: rgba(0, 180, 216, 0.08);
+}
+
+.cover h1 {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+    color: #ffffff;
+    border: none;
+    background: none;
+    padding: 0;
+}
+.cover h1::after { display: none; }
+
+.cover-subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 1.5rem;
+}
+
+.cover-meta {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cover-dot {
+    width: 3px;
+    height: 3px;
+    background: var(--canva-teal);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* ═══════════════════════════════════════════════
+   正文容器
+   ═══════════════════════════════════════════════ */
+
+.report-body {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+/* ═══════════════════════════════════════════════
+   标题系统 — 彩色左边条 + 色块背景
+   ═══════════════════════════════════════════════ */
+
+h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--canva-navy);
+    margin: 3rem 0 1.2rem;
+    padding: 0.8rem 1.2rem;
+    background: linear-gradient(135deg, #eef2ff, #f0f7ff);
+    border-left: 5px solid var(--canva-teal);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    page-break-after: avoid;
+    position: relative;
+}
+h1::after { display: none; }
+
+h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--canva-navy);
+    margin: 2.5rem 0 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--canva-teal);
+    page-break-after: avoid;
+    display: inline-block;
+}
+
+/* h2 伪元素重置 — 不需要从旧样式继承 */
+h2::after { display: none; }
+
+h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2rem 0 0.6rem;
+    padding-left: 12px;
+    border-left: 3px solid var(--canva-coral);
+    page-break-after: avoid;
+}
+
+h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 1.2rem 0 0.5rem;
+}
+
+/* ═══════════════════════════════════════════════
+   文字与链接
+   ═══════════════════════════════════════════════ */
+
+p {
+    margin-bottom: 0.9rem;
+    color: var(--text-primary);
+    line-height: 1.85;
+}
+
+strong { color: var(--canva-navy); font-weight: 700; }
+a { color: var(--canva-teal); text-decoration: none; font-weight: 600; }
+a:hover { text-decoration: underline; }
+
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, var(--canva-teal), var(--canva-purple), var(--canva-coral));
+    margin: 2.5rem 0;
+    border-radius: 1px;
+    opacity: 0.3;
+}
+
+/* ═══════════════════════════════════════════════
+   表格 — Canva 风格圆角彩色表头
+   ═══════════════════════════════════════════════ */
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.8rem 0;
+    font-size: 13px;
+    page-break-inside: avoid;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border-color);
+}
+
+thead {
+    background: var(--canva-navy);
+}
+
+th {
+    padding: 14px 18px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 12px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+td {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    vertical-align: top;
+}
+
+tbody tr { background: var(--bg-white); }
+tbody tr:nth-child(even) { background: var(--bg-light); }
+tbody tr:last-child td { border-bottom: none; }
+
+/* ═══════════════════════════════════════════════
+   引用块 — Canva 彩色卡片
+   ═══════════════════════════════════════════════ */
+
+blockquote {
+    position: relative;
+    padding: 1.2rem 1.6rem 1.2rem 3rem;
+    margin: 1.4rem 0;
+    background: var(--bg-light);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--canva-purple);
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    page-break-inside: avoid;
+}
+
+blockquote::before {
+    content: '\201C';
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    font-size: 32px;
+    font-family: Georgia, serif;
+    color: var(--canva-purple);
+    opacity: 0.35;
+    line-height: 1;
+}
+
+blockquote p { margin-bottom: 0.2rem; color: var(--text-secondary); }
+
+/* 交替引用块颜色 */
+blockquote:nth-of-type(3n+2) { border-left-color: var(--canva-teal); }
+blockquote:nth-of-type(3n+2)::before { color: var(--canva-teal); }
+blockquote:nth-of-type(3n+3) { border-left-color: var(--canva-coral); }
+blockquote:nth-of-type(3n+3)::before { color: var(--canva-coral); }
+
+/* ═══════════════════════════════════════════════
+   列表
+   ═══════════════════════════════════════════════ */
+
+ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.4rem;
+    line-height: 1.75;
+}
+
+li::marker {
+    color: var(--canva-teal);
+    font-weight: 700;
+}
+
+/* ═══════════════════════════════════════════════
+   代码
+   ═══════════════════════════════════════════════ */
+
+code {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    background: var(--bg-card);
+    color: var(--canva-purple);
+    padding: 2px 7px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+}
+
+pre {
+    background: var(--canva-navy);
+    color: #e8eaed;
+    padding: 1.2rem 1.5rem;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    margin: 1.2rem 0;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    border: none;
+}
+
+/* ═══════════════════════════════════════════════
+   自定义组件
+   ═══════════════════════════════════════════════ */
+
+.insight-card {
+    background: linear-gradient(135deg, #f0f7ff, #f5f0ff);
+    border-left: 4px solid var(--canva-teal);
+    padding: 1.4rem 1.8rem;
+    margin: 1.8rem 0;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    page-break-inside: avoid;
+    box-shadow: var(--shadow-card);
+}
+
+.insight-card h4 {
+    color: var(--canva-navy);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.executive-summary {
+    background: linear-gradient(135deg, #eef2ff 0%, #f0f7ff 50%, #f0fff4 100%);
+    padding: 2rem 2.2rem;
+    border-radius: var(--radius-lg);
+    margin: 2rem 0;
+    page-break-inside: avoid;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
+}
+
+.swot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+    page-break-inside: avoid;
+}
+
+.swot-cell {
+    padding: 1.4rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+.swot-cell.strengths { background: #ecfdf5; border-top: 4px solid var(--canva-mint); }
+.swot-cell.weaknesses { background: #fef2f2; border-top: 4px solid var(--canva-coral); }
+.swot-cell.opportunities { background: #eff6ff; border-top: 4px solid var(--canva-teal); }
+.swot-cell.threats { background: #fffbeb; border-top: 4px solid var(--canva-amber); }
+.swot-cell h4 { font-size: 14px; font-weight: 700; margin-bottom: 0.6rem; }
+.swot-cell ul { padding-left: 1.2rem; font-size: 13px; }
+
+.priority-high {
+    display: inline-block;
+    background: var(--canva-coral);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 99px;
+    text-transform: uppercase;
+}
+
+.priority-medium {
+    display: inline-block;
+    background: var(--canva-amber);
+    color: var(--text-primary);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 99px;
+    text-transform: uppercase;
+}
+
+.priority-low {
+    display: inline-block;
+    background: var(--canva-mint);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 99px;
+    text-transform: uppercase;
+}
+
+.screenshot {
+    max-width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    margin: 1.2rem 0;
+    box-shadow: var(--shadow-hover);
+}
+
+.page-break { page-break-before: always; }
+
+/* ═══════════════════════════════════════════════
+   页脚
+   ═══════════════════════════════════════════════ */
+
+.footer {
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-muted);
+    padding: 2rem 0 1rem;
+    margin-top: 3rem;
+    border-top: 2px solid var(--border-color);
+    letter-spacing: 0.3px;
+}
+
+/* ═══════════════════════════════════════════════
+   打印优化
+   ═══════════════════════════════════════════════ */
+
+@media print {
+    body { font-size: 12px; }
+    .cover { min-height: 100vh; }
+    h1 { margin-top: 2rem; }
+    table, blockquote { box-shadow: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+    <div class="cover-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+    <div class="cover-inner">
+        <div class="cover-badge">MARKET RESEARCH</div>
+        <h1>LIV CRYSTAL 品牌策略</h1>
+        <p class="cover-subtitle">品牌策略方案 · 溢价立得住</p>
+        <div class="cover-meta">
+            <span>2026-06-30</span>
+            <span class="cover-dot"></span>
+            <span>Prepared by Yoga</span>
+        </div>
+    </div>
+</div>
+
+<div class="report-body">
+<h1 id="liv-crystal">LIV CRYSTAL 品牌策略方案</h1>
+<blockquote>
+<p>数据底座：竞品发现（10 个竞品）· 网站诊断（双端实勘）· 竞品 VOC（Trustpilot 305 条实抓）。
+主线结论：<strong>溢价立得住</strong> —— 价格是头部竞品 3–6 倍，必须用"真货 + 耐用 + 透明售后"把溢价讲清楚。
+缺口声明：ads-intelligence / seo-keywords / market-trends / site-optimization 四模块本次未跑，相关结论标注 ⚠️ 待补，不编造。</p>
+</blockquote>
+<hr />
+<h2 id="swot">一、SWOT 分析</h2>
+<h3 id="strengths">Strengths（优势）</h3>
+<ul>
+<li><strong>真实高端多宝石料</strong>：乌拉圭紫晶 / 赫基蒙钻 / 石榴石等，料本身可立溢价（来源：site-analysis + reviews unmet_needs）。</li>
+<li><strong>同价位段几乎无强口碑对手</strong>：唯一同档 Tiny Rituals（$98–275）口碑塌方，仅 6 条 / 3.2★（来源：Vault 价格带 + Trustpilot 评分）。</li>
+<li><strong>意图分类体系完整</strong>：Calm / Love / Wealth / Protection / Clarity / Confidence，叙事可塑性强，便于场景化营销（来源：competitors.json positioning）。</li>
+</ul>
+<h3 id="weaknesses">Weaknesses（劣势）</h3>
+<ul>
+<li><strong>零第三方口碑沉淀</strong>：甲方 Trustpilot 404，竞品 Conscious Items 已有 533 条 / 4.4★。高价 + 无信任背书 = 转化硬伤（来源：reviews competitor_analysis）。</li>
+<li><strong>平台 UEESHOP 弱于 Shopify 生态</strong>：评价 App / 营销插件 / 第三方信任组件少（来源：site-analysis）。</li>
+<li><strong>P0 转化杀手</strong>：进站双层弹窗挡首屏 / 购买区（来源：site_analysis.html）。</li>
+<li><strong>物有所值感知未建立</strong>：$98–105 是竞品 3–6 倍，用户一眼看不懂为何更贵，价格敏感人群被 $15–39 竞品分流。</li>
+</ul>
+<h3 id="opportunities">Opportunities（机会）</h3>
+<ul>
+<li><strong>抢竞品第一痛点</strong>：竞品 VOC 第一痛点 = 退款/客服敷衍（25 次）→ 甲方做"无忧退换 + 客服 SLA"可直接抢人（来源：305 条 VOC）。</li>
+<li><strong>真伪质疑窗口</strong>：竞品被指"染色冒充稀有"（真伪痛点 11 次）→ 甲方用产地/鉴定可视化正面回应，把"真"做成护城河。</li>
+<li><strong>同价位口碑反超</strong>：Tiny Rituals 3.2★/6 条，甲方在 $98–275 段口碑几乎是空白市场。</li>
+<li><strong>情绪仪式是品类最大买点</strong>（92 次）→ 内容主轴现成。</li>
+<li>⚠️ 渠道/搜索/趋势机会：ads / seo / trends 数据缺失，待补。</li>
+</ul>
+<h3 id="threats">Threats（威胁）</h3>
+<ul>
+<li><strong>价格分流</strong>：$15–39 平价竞品折扣猛、走量，价格敏感用户首选。</li>
+<li><strong>竞品平台成熟</strong>：Conscious Items 三评价 App + Shopify，信任组件密度远高于甲方。</li>
+<li><strong>品类信任天花板</strong>：水晶疗愈品类整体存在"伪科学/智商税"舆论，新客信任成本高。</li>
+<li>⚠️ 市场趋势：品类热度 / 季节性 / 新兴需求数据缺失，待补。</li>
+</ul>
+<hr />
+<h2 id="usp">二、USP 候选（按推荐度排序）</h2>
+<h3 id="usp-1">USP-1 ⭐ 主推：「看得见的真货，戴得住的能量」</h3>
+<ul>
+<li><strong>核心表述</strong>：每条手链可溯源产地 + 真伪可视化，专业穿绳工艺保用，不像平价货那样戴几次就断。</li>
+<li><strong>数据支撑</strong>：竞品 VOC 真伪质疑 11 次 + 易断 8 次 + 破损 7 次（305 条）；甲方用真实多宝石料。</li>
+<li><strong>差异化程度</strong>：高。竞品恰恰在"真"和"耐用"上被反复差评，甲方正面打。</li>
+<li><strong>可信度</strong>：强（有真实料 + 工艺事实支撑）。</li>
+</ul>
+<h3 id="usp-2">USP-2 ⭐ 强配：「无忧售后，能量不掉线」</h3>
+<ul>
+<li><strong>核心表述</strong>：清晰退换政策 + 快速客服响应（SLA），买高价不担心售后踢皮球。</li>
+<li><strong>数据支撑</strong>：竞品第一痛点 = 退款/客服敷衍 25 次（305 条 VOC 最高频）。</li>
+<li><strong>差异化程度</strong>：高。打的是竞品最大软肋，最快见效。</li>
+<li><strong>可信度</strong>：强（甲方可控，靠政策+流程落地即可）。</li>
+</ul>
+<h3 id="usp-3">USP-3 配套：「按意图选能量，每条都有它的使命」</h3>
+<ul>
+<li><strong>核心表述</strong>：Calm/Love/Wealth/Protection… 按人生意图选择，戴上即仪式。</li>
+<li><strong>数据支撑</strong>：情绪仪式买点 92 次（品类最大买点）。</li>
+<li><strong>差异化程度</strong>：中（竞品也讲意图，非独占，但可强化叙事质感）。</li>
+<li><strong>可信度</strong>：强。</li>
+</ul>
+<h3 id="usp-4">USP-4 备选：「同价位里，口碑空白处的那一个」</h3>
+<ul>
+<li><strong>核心表述</strong>：$98+ 高端水晶手链里，把口碑做到第一。</li>
+<li><strong>数据支撑</strong>：Tiny Rituals 同档仅 6 条/3.2★。</li>
+<li><strong>说明</strong>：这是要去"做到"的目标，不是现状卖点；适合作内部 KPI，非对外主打。</li>
+</ul>
+<blockquote>
+<p><strong>建议组合</strong>：对外主打 <strong>USP-1（真+耐用）+ USP-2（无忧售后）</strong> 立住溢价；USP-3 做情绪内容主轴；USP-4 作内部目标。</p>
+</blockquote>
+<hr />
+<h2 id="_1">三、目标人群画像</h2>
+<ul>
+<li><strong>人口统计</strong>：女性为主，25–45 岁，美国，中等及以上可支配收入（愿为 $98+ 单链买单，来源：价格带 + 品类）。</li>
+<li><strong>购买场景</strong>：自我疗愈 / 情绪锚点（焦虑、转运、求安全感）、礼物（爱与保护意图）、人生节点（新开始/疗愈期）。</li>
+<li><strong>决策因素</strong>：①真货与否（最在意被骗）②情绪共鸣/意图匹配 ③耐用度 ④售后是否靠谱 ⑤社交货币（"被夸"——VOC 称赞买点）。</li>
+<li><strong>信息渠道</strong>：⚠️ ads/seo 数据缺失，暂以品类常识判断为社媒（IG/TikTok 灵性内容）+ 搜索 + 口碑；具体待补跑后确认。</li>
+<li><strong>痛点与需求</strong>：怕买到染色假货、怕戴几次就断、怕高价售后没人管 —— 这三点正是甲方 USP 直接回应的。</li>
+</ul>
+<hr />
+<h2 id="_2">四、差异化定位</h2>
+<ul>
+<li><strong>品牌定位语</strong>：<em>真水晶，真能量，真售后 —— 戴得住的高端疗愈手链。</em></li>
+<li><strong>核心差异化</strong>：在平价竞品"走量+折扣+易断+真伪存疑"的红海里，甲方做 <strong>"可溯源真货 + 耐用工艺 + 无忧售后"的高信任高端档</strong>。不打价格战，打信任战。</li>
+<li><strong>价值阶梯</strong>：</li>
+<li>功能价值：真天然宝石、穿绳耐用、清晰退换。</li>
+<li>情感价值：戴上被保护/平静/自信的仪式感（VOC 92 次）。</li>
+<li>自我表达价值：按意图选择，彰显"我在认真照顾自己/所爱之人"的生活态度。</li>
+<li><strong>竞品错位</strong>：</li>
+<li>避开：低价走量、深折扣战场（拼不过也不该拼）。</li>
+<li>主攻：真伪信任 + 耐用 + 售后体验 —— 竞品全是软肋的地方。</li>
+</ul>
+<hr />
+<h2 id="_3">五、推广策略框架</h2>
+<blockquote>
+<p>⚠️ 本节渠道优先级与投放细节因 ads-intelligence / seo-keywords / market-trends 数据缺失，仅给基于现有 VOC + 竞品数据的<strong>方向性框架</strong>，落地参数待补跑三模块后确定。</p>
+</blockquote>
+<h3 id="_4">信任基建（先于投放，最高优先级）</h3>
+<ul>
+<li><strong>补口碑</strong>：迁移/接入第三方评价（Trustpilot/Judge.me 类），把站内原生 5★ 沉淀为可信外部背书 —— 这是高价转化的前提，竞品已有 533 条。</li>
+<li><strong>真货可视化</strong>：产品页加产地溯源 / 鉴定信息 / 真假对比内容，直接回应"染色冒充"质疑。</li>
+<li><strong>售后承诺前置</strong>：退换政策 + 响应 SLA 做成购买区信任标，打竞品第一痛点。</li>
+<li><strong>修 P0</strong>：先解决进站双层弹窗挡购买区（site-analysis P0），否则一切流量都漏。</li>
+</ul>
+<h3 id="voc">内容方向（基于 VOC）</h3>
+<ul>
+<li>主轴：情绪仪式故事（被保护/平静/自信，92 次买点）。</li>
+<li>对比轴：真货 vs 染色假货、耐用 vs 易断（直击竞品软肋）。</li>
+<li>社交货币：用户"被夸"UGC（VOC 称赞买点）。</li>
+</ul>
+<h3 id="_5">渠道（方向性，待数据确认）</h3>
+<ul>
+<li>⚠️ Meta / Google / TikTok / 内容 / 邮件 优先级需 ads + seo 数据支撑。</li>
+<li>现阶段建议：先把信任基建和产品页打磨好，再投放，避免高价低信任硬投烧钱。</li>
+</ul>
+<h3 id="_6">下一步补数据（让策略落地）</h3>
+<ol>
+<li>ads-intelligence：看竞品在投什么、怎么投，定渠道与素材方向。</li>
+<li>seo-keywords：关键词缺口，定内容/SEO 规划。</li>
+<li>market-trends：品类热度与季节性，定节奏与备货。</li>
+<li>site-optimization：把定位落到产品页/首页改版。</li>
+</ol>
+<hr />
+<p><em>LIV CRYSTAL 品牌策略 · 2026-06-30 · 基于 305 条实抓 VOC + 10 竞品 + 双端网站诊断</em></p>
+</div>
+
+<div class="footer">
+    <p>Market Research Agent · Powered by AI · Confidential</p>
+</div>
+
+</body>
+</html>
