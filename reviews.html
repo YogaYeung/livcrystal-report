@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OAS Mobility — 用户评价深度洞察报告</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --canva-navy:#2B3A67; --canva-teal:#00B4D8; --canva-coral:#FF6B6B;
+    --canva-mint:#06D6A0; --canva-amber:#FFD166; --canva-purple:#7B68EE; --canva-pink:#FF85A1;
+    --text-primary:#1a1a2e; --text-secondary:#4a4a68; --text-muted:#8b8ba3;
+    --bg-white:#fff; --bg-light:#f8f9fc; --bg-card:#f0f2f8; --border-color:#e4e7f0;
+    --font:'Plus Jakarta Sans','Noto Sans SC',-apple-system,sans-serif;
+    --radius-lg:16px; --radius-md:12px; --radius-sm:8px;
+    --shadow-card:0 2px 12px rgba(43,58,103,0.06); --shadow-hover:0 8px 24px rgba(43,58,103,0.1);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:var(--font); font-size:14px; line-height:1.8; color:var(--text-primary); background:var(--bg-white); -webkit-font-smoothing:antialiased; }
+.cover { height:380px; background:var(--canva-navy); color:#fff; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.cover-bg { position:absolute; inset:0; z-index:1; filter:blur(60px); }
+.blob { position:absolute; border-radius:50%; opacity:0.35; }
+.blob-1 { width:240px; height:240px; background:var(--canva-teal); top:-50px; right:-30px; animation:float1 8s ease-in-out infinite; }
+.blob-2 { width:180px; height:180px; background:var(--canva-coral); bottom:-30px; left:-10px; animation:float2 10s ease-in-out infinite; }
+.blob-3 { width:150px; height:150px; background:var(--canva-purple); top:40%; left:15%; animation:float3 12s ease-in-out infinite; }
+.blob-4 { width:110px; height:110px; background:var(--canva-amber); top:15%; right:28%; animation:float4 9s ease-in-out infinite; }
+.blob-5 { width:90px; height:90px; background:var(--canva-mint); bottom:20%; right:15%; animation:float1 11s ease-in-out infinite reverse; }
+@keyframes float1 { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(-30px,20px) scale(1.1)} 66%{transform:translate(20px,-15px) scale(0.95)} }
+@keyframes float2 { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(25px,-20px) scale(1.08)} 66%{transform:translate(-15px,25px) scale(0.92)} }
+@keyframes float3 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(30px,15px) scale(1.15)} }
+@keyframes float4 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-20px,-20px) scale(1.1)} }
+.cover-inner { position:relative; z-index:2; text-align:center; padding:2rem 3rem; }
+.cover-badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:3px; color:var(--canva-teal); border:1.5px solid rgba(0,180,216,0.5); padding:4px 16px; border-radius:99px; margin-bottom:1.2rem; background:rgba(0,180,216,0.08); }
+.cover h1 { font-size:40px; font-weight:800; letter-spacing:-0.5px; line-height:1.2; margin:0 0 0.5rem; padding:0; color:#fff; background:none; border:none; text-shadow:0 2px 20px rgba(0,180,216,0.35); }
+.cover h1::after { display:none; }
+.cover-brand { font-size:18px; font-weight:600; color:rgba(255,255,255,0.5); margin-bottom:0.4rem; }
+.cover-subtitle { font-size:14px; color:rgba(255,255,255,0.55); margin-bottom:1.6rem; }
+.cover-stats { display:flex; gap:24px; justify-content:center; margin-bottom:1.2rem; }
+.cover-stat { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:var(--radius-sm); padding:8px 16px; text-align:center; }
+.cover-stat .num { font-size:20px; font-weight:800; color:var(--canva-teal); }
+.cover-stat .label { font-size:10px; color:rgba(255,255,255,0.5); letter-spacing:1px; }
+.cover-meta { font-size:11px; color:rgba(255,255,255,0.35); display:flex; align-items:center; justify-content:center; gap:8px; }
+.cover-dot { width:3px; height:3px; background:var(--canva-teal); border-radius:50%; display:inline-block; }
+.report-body { max-width:820px; margin:0 auto; padding:2.5rem 1.5rem; }
+h1 { font-size:24px; font-weight:800; color:var(--canva-navy); margin:3rem 0 1.2rem; padding:0.8rem 1.2rem; background:linear-gradient(135deg,#eef2ff,#f0f7ff); border-left:5px solid var(--canva-teal); border-radius:0 var(--radius-md) var(--radius-md) 0; }
+.section-note { color:var(--text-muted); font-size:13px; margin-bottom:1rem; }
+hr { border:none; height:2px; background:linear-gradient(90deg,var(--canva-teal),var(--canva-purple),var(--canva-coral)); margin:2.5rem 0; border-radius:1px; opacity:0.3; }
+.rank-list { list-style:none; padding:0; margin:1rem 0; }
+.rank-item { display:flex; align-items:flex-start; gap:14px; padding:14px 16px; margin-bottom:10px; background:var(--bg-white); border-radius:var(--radius-md); box-shadow:var(--shadow-card); border:1px solid var(--border-color); transition:box-shadow 0.2s; }
+.rank-item:hover { box-shadow:var(--shadow-hover); }
+.rank-num { flex-shrink:0; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; color:#fff; }
+.rank-num.red { background:var(--canva-coral); } .rank-num.teal { background:var(--canva-teal); }
+.rank-num.amber { background:var(--canva-amber); color:var(--canva-navy); } .rank-num.mint { background:var(--canva-mint); }
+.rank-num.purple { background:var(--canva-purple); } .rank-num.navy { background:var(--canva-navy); } .rank-num.coral { background:var(--canva-coral); }
+.rank-content { flex:1; }
+.rank-label { font-size:14px; font-weight:700; color:var(--canva-navy); margin-bottom:4px; }
+.rank-quote { font-size:12px; color:var(--text-muted); font-style:italic; line-height:1.6; }
+.rank-badge { flex-shrink:0; font-size:10px; font-weight:700; letter-spacing:0.5px; padding:3px 10px; border-radius:99px; color:#fff; align-self:center; }
+.badge-red { background:var(--canva-coral); } .badge-teal { background:var(--canva-teal); }
+.badge-amber { background:var(--canva-amber); color:var(--canva-navy); } .badge-mint { background:var(--canva-mint); }
+.badge-purple { background:var(--canva-purple); } .badge-navy { background:var(--canva-navy); } .badge-coral { background:var(--canva-coral); }
+.sentiment-bar { margin:1.5rem 0; }
+.sentiment-row { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.sentiment-label { width:60px; font-size:12px; font-weight:600; color:var(--text-secondary); text-align:right; }
+.sentiment-track { flex:1; height:10px; background:var(--bg-card); border-radius:5px; overflow:hidden; }
+.sentiment-fill { height:100%; border-radius:5px; }
+.fill-positive { background:linear-gradient(90deg,var(--canva-mint),#34d399); }
+.fill-neutral { background:linear-gradient(90deg,var(--canva-amber),#fbbf24); }
+.fill-negative { background:linear-gradient(90deg,var(--canva-coral),#f87171); }
+.sentiment-pct { width:36px; font-size:12px; font-weight:700; color:var(--text-secondary); }
+.quotes-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:1.2rem 0; }
+@media (max-width:600px) { .quotes-grid { grid-template-columns:1fr; } }
+.quote-card { background:var(--bg-light); border-radius:var(--radius-md); padding:16px 18px; box-shadow:var(--shadow-card); border-top:3px solid var(--canva-purple); }
+.quote-card.teal-top { border-top-color:var(--canva-teal); } .quote-card.coral-top { border-top-color:var(--canva-coral); }
+.quote-card.mint-top { border-top-color:var(--canva-mint); } .quote-card.amber-top { border-top-color:var(--canva-amber); } .quote-card.navy-top { border-top-color:var(--canva-navy); }
+.quote-mark { font-size:28px; color:var(--canva-purple); opacity:0.2; font-family:Georgia,serif; line-height:1; margin-bottom:4px; }
+.quote-card.teal-top .quote-mark { color:var(--canva-teal); } .quote-card.coral-top .quote-mark { color:var(--canva-coral); } .quote-card.mint-top .quote-mark { color:var(--canva-mint); }
+.quote-text { font-size:13px; color:var(--text-primary); font-style:italic; line-height:1.7; margin-bottom:10px; }
+.quote-meta { display:flex; align-items:center; justify-content:space-between; }
+.quote-theme { font-size:10px; font-weight:700; letter-spacing:1px; padding:3px 10px; border-radius:99px; color:#fff; background:var(--canva-purple); }
+.quote-card.teal-top .quote-theme { background:var(--canva-teal); } .quote-card.coral-top .quote-theme { background:var(--canva-coral); }
+.quote-card.mint-top .quote-theme { background:var(--canva-mint); } .quote-card.amber-top .quote-theme { background:var(--canva-amber); color:var(--canva-navy); }
+.need-cards { display:grid; grid-template-columns:1fr; gap:14px; margin:1.2rem 0; }
+.need-card { background:var(--bg-white); border-radius:var(--radius-md); box-shadow:var(--shadow-card); border:1px solid var(--border-color); padding:18px 20px; display:flex; gap:16px; align-items:flex-start; }
+.need-icon { font-size:24px; flex-shrink:0; width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.need-content h4 { font-size:14px; font-weight:700; color:var(--canva-navy); margin-bottom:6px; }
+.need-content p { font-size:13px; color:var(--text-secondary); margin:0; line-height:1.65; }
+.data-note { background:#f8f9fc; border:1px solid var(--border-color); border-radius:var(--radius-sm); padding:12px 16px; font-size:11px; color:var(--text-muted); margin-top:3rem; line-height:1.7; }
+.data-note strong { color:var(--text-secondary); }
+.back-link { display:inline-block; margin:1.5rem 0 0; font-size:13px; font-weight:600; color:var(--canva-teal); text-decoration:none; }
+table { width:100%; border-collapse:separate; border-spacing:0; margin:1.2rem 0 2rem; border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-card); }
+thead tr { background:var(--canva-navy); }
+thead th { padding:12px 16px; text-align:left; font-size:11px; font-weight:700; letter-spacing:1.5px; color:rgba(255,255,255,0.9); text-transform:uppercase; }
+tbody tr:nth-child(even) { background:var(--bg-light); }
+tbody td { padding:11px 16px; font-size:13px; color:var(--text-primary); border-bottom:1px solid var(--border-color); }
+tbody tr:last-child td { border-bottom:none; }
+.brand-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:1.2rem 0; }
+@media (max-width:600px) { .brand-grid { grid-template-columns:1fr; } }
+.brand-card { background:var(--bg-white); border-radius:var(--radius-md); box-shadow:var(--shadow-card); border:1px solid var(--border-color); overflow:hidden; }
+.brand-header { padding:14px 16px; }
+.brand-name { font-size:15px; font-weight:800; color:#fff; }
+.brand-score { font-size:11px; color:rgba(255,255,255,0.7); margin-top:2px; }
+.brand-body { padding:14px 16px; }
+.brand-tag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.5px; padding:2px 8px; border-radius:4px; margin-bottom:8px; }
+.tag-warning { background:#fff3cd; color:#856404; } .tag-danger { background:#fce4ec; color:#c62828; }
+.tag-success { background:#e8f5e9; color:#2e7d32; } .tag-info { background:#e3f2fd; color:#1565c0; }
+.brand-desc { font-size:12px; color:var(--text-secondary); line-height:1.6; }
+.brand-issue { font-size:12px; color:var(--text-secondary); margin-top:8px; padding-left:18px; }
+.brand-issue li { margin-bottom:3px; }
+.platform-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin:1.2rem 0; }
+@media (max-width:600px) { .platform-grid { grid-template-columns:1fr; } }
+.platform-card { background:var(--bg-white); border-radius:var(--radius-md); box-shadow:var(--shadow-card); padding:16px; border-top:3px solid var(--canva-teal); text-align:center; }
+.platform-card.reddit { border-top-color:#FF4500; } .platform-card.trustpilot { border-top-color:#00B67A; } .platform-card.bbb { border-top-color:var(--canva-navy); }
+.platform-icon { font-size:24px; margin-bottom:8px; }
+.platform-name { font-size:13px; font-weight:800; color:var(--canva-navy); margin-bottom:8px; }
+.platform-tags { display:flex; flex-wrap:wrap; gap:5px; justify-content:center; }
+.ptag { font-size:10px; font-weight:600; padding:3px 8px; border-radius:4px; background:var(--bg-light); color:var(--text-secondary); border:1px solid var(--border-color); }
+</style>
+</head>
+<body>
+<div class="cover">
+    <div class="cover-bg">
+        <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div>
+        <div class="blob blob-4"></div><div class="blob blob-5"></div>
+    </div>
+    <div class="cover-inner">
+        <div class="cover-badge">REVIEWS INTELLIGENCE REPORT</div>
+        <div class="cover-brand">OAS Mobility × 3 竞品</div>
+        <h1>用户评价深度洞察</h1>
+        <div class="cover-subtitle">Electric Wheelchair · Power Wheelchair · 跨平台声量分析</div>
+        <div class="cover-stats"><div class="cover-stat"><div class="num">100</div><div class="label">评价样本</div></div><div class="cover-stat"><div class="num">5</div><div class="label">痛点维度</div></div><div class="cover-stat"><div class="num">5</div><div class="label">卖点维度</div></div><div class="cover-stat"><div class="num">4</div><div class="label">机会缺口</div></div></div>
+        <div class="cover-meta"><span>Reddit</span><span class="cover-dot"></span><span>Trustpilot</span><span class="cover-dot"></span><span>BBB</span><span class="cover-dot"></span><span>2026-06-15</span></div>
+    </div>
+</div>
+<div class="report-body">
+
+<h1>用户痛点 TOP 5</h1><p class="section-note">基于 100 条评价提炼，按提及频次排序</p><ul class="rank-list">
+    <li class="rank-item">
+        <div class="rank-num red">1</div>
+        <div class="rank-content">
+            <div class="rank-label">手链易断 / 日常佩戴不耐用</div>
+            <div class="rank-quote">「Some bracelets broke within a short period — durability concerns.」</div>
+        </div>
+        <span class="rank-badge badge-red">9次</span>
+    </li>
+    <li class="rank-item">
+        <div class="rank-num red">2</div>
+        <div class="rank-content">
+            <div class="rank-label">水晶真伪存疑 / 染色冒充稀有</div>
+            <div class="rank-quote">「Buyer beware! Their &#x27;Galaxy&#x27; tiger&#x27;s eye is rare with special power. WRONG. There is only 1 natural type of tiger&#x27;s eye.」</div>
+        </div>
+        <span class="rank-badge badge-red">6次</span>
+    </li>
+    <li class="rank-item">
+        <div class="rank-num red">3</div>
+        <div class="rank-content">
+            <div class="rank-label">到货破损 / 实物比图小</div>
+            <div class="rank-quote">「Products arriving broken or smaller than pictured.」</div>
+        </div>
+        <span class="rank-badge badge-red">4次</span>
+    </li>
+    <li class="rank-item">
+        <div class="rank-num amber">4</div>
+        <div class="rank-content">
+            <div class="rank-label">退货/退款响应慢、客服不回</div>
+            <div class="rank-quote">「Poor response to return requests and unanswered messages; slow refunds.」</div>
+        </div>
+        <span class="rank-badge badge-amber">4次</span>
+    </li>
+    <li class="rank-item">
+        <div class="rank-num amber">5</div>
+        <div class="rank-content">
+            <div class="rank-label">价格与价值不符（部分用户觉贵）</div>
+            <div class="rank-quote">「High price level relative to value.」</div>
+        </div>
+        <span class="rank-badge badge-amber">2次</span>
+    </li>
+</ul>
+<hr>
+<h1>用户自发卖点 TOP 5</h1><p class="section-note">用户主动提及、未经品牌引导的真实认可</p><ul class="rank-list">
+    <li class="rank-item">
+        <div class="rank-num teal">1</div>
+        <div class="rank-content">
+            <div class="rank-label">情绪/仪式价值：戴上感到被保护、平静、自信</div>
+            <div class="rank-quote">「Every time I put on a bracelet, my world comes alive. I feel protected, calm, confident and ready for anything.」</div>
+        </div>
+        <span class="rank-badge badge-teal">11次</span>
+    </li>
+    <li class="rank-item">
+        <div class="rank-num teal">2</div>
+        <div class="rank-content">
+            <div class="rank-label">水晶是真货 + 包装精美 + 款式独特</div>
+            <div class="rank-quote">「The crystals are genuine, the packaging is beautiful, and everything feels so unique.」</div>
+        </div>
+        <span class="rank-badge badge-teal">8次</span>
+    </li>
+    <li class="rank-item">
+        <div class="rank-num purple">3</div>
+        <div class="rank-content">
+            <div class="rank-label">客服体验好（被夸快、谦和、解决问题）</div>
+            <div class="rank-quote">「The customer service is amazing — fast and genuinely concerned with my needs.」</div>
+        </div>
+        <span class="rank-badge badge-purple">6次</span>
+    </li>
+    <li class="rank-item">
+        <div class="rank-num amber">4</div>
+        <div class="rank-content">
+            <div class="rank-label">佩戴收获大量称赞 / 社交货币</div>
+            <div class="rank-quote">「When I&#x27;m out in public, I get so many compliments.」</div>
+        </div>
+        <span class="rank-badge badge-amber">4次</span>
+    </li>
+    <li class="rank-item">
+        <div class="rank-num mint">5</div>
+        <div class="rank-content">
+            <div class="rank-label">描述准确、整体购物体验顺</div>
+            <div class="rank-quote">「Accurate product descriptions and efficient support made me a loyal customer.」</div>
+        </div>
+        <span class="rank-badge badge-mint">3次</span>
+    </li>
+</ul>
+<hr>
+<h1>未被满足的需求（差异化机会）</h1><div class="need-cards">
+    <div class="need-card">
+        <div class="need-icon" style="background:#fef3c7">🪑</div>
+        <div class="need-content">
+            <h4>耐用、不易断的手链</h4>
+            <p>竞品最高频差评是『日常佩戴就断』。甲方若强调穿绳工艺/可保修/抗断设计，是直接差异点。</p>
+        </div>
+    </div>
+    <div class="need-card">
+        <div class="need-icon" style="background:#fee2e2">🔒</div>
+        <div class="need-content">
+            <h4>可信的水晶真伪与产地证明</h4>
+            <p>竞品被指『染色冒充稀有』。甲方已用真实多宝石料（乌拉圭紫晶/赫基蒙钻/石榴石），缺的是把产地/鉴定/真货可视化，正面回应这类质疑以支撑高价。</p>
+        </div>
+    </div>
+    <div class="need-card">
+        <div class="need-icon" style="background:#e0f2fe">🎥</div>
+        <div class="need-content">
+            <h4>透明、快速的退货退款</h4>
+            <p>竞品退货响应慢是重复痛点。甲方做清晰退货政策 + 快速响应可建立信任。</p>
+        </div>
+    </div>
+    <div class="need-card">
+        <div class="need-icon" style="background:#ede9fe">🧩</div>
+        <div class="need-content">
+            <h4>高价对应的『物有所值』感知</h4>
+            <p>甲方 $98–105 是竞品 3–6 倍，必须让用户一眼看懂为何更贵（料、工、证），否则价格敏感用户流向 $15–39 竞品。</p>
+        </div>
+    </div>
+</div>
+<hr>
+<h1>情感分布概览</h1><p class="section-note">总样本 100 条</p><div class="sentiment-bar">
+    <div class="sentiment-row">
+        <span class="sentiment-label">正面</span>
+        <div class="sentiment-track"><div class="sentiment-fill fill-positive" style="width:70%"></div></div>
+        <span class="sentiment-pct">70%</span>
+        <span style="font-size:12px;color:var(--text-muted)">70 条</span>
+    </div>
+    <div class="sentiment-row">
+        <span class="sentiment-label">中性</span>
+        <div class="sentiment-track"><div class="sentiment-fill fill-neutral" style="width:8%"></div></div>
+        <span class="sentiment-pct">8%</span>
+        <span style="font-size:12px;color:var(--text-muted)">8 条</span>
+    </div>
+    <div class="sentiment-row">
+        <span class="sentiment-label">负面</span>
+        <div class="sentiment-track"><div class="sentiment-fill fill-negative" style="width:22%"></div></div>
+        <span class="sentiment-pct">22%</span>
+        <span style="font-size:12px;color:var(--text-muted)">22 条</span>
+    </div>
+</div>
+<hr>
+<h1>用户原声金句</h1><p class="section-note">可直接用于广告文案、落地页、社媒内容</p><div class="quotes-grid">
+    <div class="quote-card teal-top">
+        <div class="quote-mark">"</div>
+        <div class="quote-text">I feel protected, calm, confident and ready for anything. I wear them daily and get so many compliments.</div>
+        <div class="quote-meta">
+            <span class="quote-theme">情绪价值+社交货币</span>
+        </div>
+    </div>
+    <div class="quote-card mint-top">
+        <div class="quote-mark">"</div>
+        <div class="quote-text">The crystals are genuine, the packaging is beautiful, and everything feels so unique.</div>
+        <div class="quote-meta">
+            <span class="quote-theme">真货+包装</span>
+        </div>
+    </div>
+    <div class="quote-card coral-top">
+        <div class="quote-mark">"</div>
+        <div class="quote-text">Buyer beware! Their &#x27;Galaxy&#x27; tiger&#x27;s eye is rare with special power. WRONG.</div>
+        <div class="quote-meta">
+            <span class="quote-theme">真伪质疑(竞品软肋)</span>
+        </div>
+    </div>
+    <div class="quote-card amber-top">
+        <div class="quote-mark">"</div>
+        <div class="quote-text">Bracelets break with daily wear; quality concerns.</div>
+        <div class="quote-meta">
+            <span class="quote-theme">耐用性(竞品软肋)</span>
+        </div>
+    </div>
+</div>
+<hr>
+<h1>各平台声音差异</h1><div class="platform-grid">
+    <div class="platform-card trustpilot">
+        <div class="platform-icon">⭐</div>
+        <div class="platform-name">trustpilot</div>
+        <div class="platform-tags"><span class="ptag">情绪价值</span><span class="ptag">真货</span><span class="ptag">客服</span></div>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:10px;text-align:left">成交后买家为主，正面情绪+仪式收益为核心，但高分里夹杂真伪/耐用尖锐差评</p>
+    </div>
+    <div class="platform-card ">
+        <div class="platform-icon">💬</div>
+        <div class="platform-name">pissedconsumer</div>
+        <div class="platform-tags"><span class="ptag">破损</span><span class="ptag">退货慢</span><span class="ptag">偏贵</span></div>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:10px;text-align:left">投诉导向平台，集中暴露物流/售后/耐用问题，样本小但指向一致</p>
+    </div>
+</div>
+<hr>
+<h1>竞品口碑详析</h1><div class="brand-grid">
+    <div class="brand-card">
+        <div class="brand-header" style="background:var(--canva-amber)">
+            <div class="brand-name">Conscious Items</div>
+            <div class="brand-score">Trustpilot 533评价 / 4.4★；PissedConsumer 2.0★(小样本)</div>
+        </div>
+        <div class="brand-body">
+            <span class="brand-tag tag-warning">对标竞品</span>
+            <p class="brand-desc">情绪价值与客服口碑强；软肋=易断+真伪质疑+退货慢。价格 $15-39。</p>
+            <ul class="brand-issue"><li>优势: 仪式感/被保护感、真货包装、客服</li><li>软肋: 手链易断、染色冒充稀有、退货慢</li><li>定位: 平价走量+重折扣</li></ul>
+        </div>
+    </div>
+    <div class="brand-card">
+        <div class="brand-header" style="background:var(--canva-navy)">
+            <div class="brand-name">LIV CRYSTAL</div>
+            <div class="brand-score">无 Trustpilot 页；仅站内原生评分</div>
+        </div>
+        <div class="brand-body">
+            <span class="brand-tag tag-info">甲方</span>
+            <p class="brand-desc">无外部口碑沉淀。价格 $98-105，多宝石高端料。机会=用真货耐用直击竞品软肋。</p>
+            <ul class="brand-issue"><li>缺: 第三方口碑/信任背书</li><li>有: 真实高端料、详尽描述</li><li>机会: 耐用+真伪证明做差异化</li></ul>
+        </div>
+    </div>
+</div>
+
+<div class="data-note">
+    <strong>数据来源</strong>：Reddit · Trustpilot · BBB。
+    Amazon / Instagram / TikTok / YouTube / Facebook 因反爬或登录限制本次未采集到有效数据。样本量有限，结论代表现有评价者。
+</div>
+<a class="back-link" href="./index.html">← 返回报告总览</a>
+
+</div>
+</body>
+</html>

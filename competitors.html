@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>https://livcrystal.com/ — 竞品发现报告</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canva-navy:#2B3A67;--canva-teal:#00B4D8;--canva-coral:#FF6B6B;
+  --canva-mint:#06D6A0;--canva-amber:#FFD166;--canva-purple:#7B68EE;--canva-pink:#FF85A1;
+  --text-primary:#1a1a2e;--text-secondary:#4a4a68;--text-muted:#8b8ba3;
+  --bg-white:#fff;--bg-light:#f8f9fc;--bg-card:#f0f2f8;--border-color:#e4e7f0;
+  --font:'Plus Jakarta Sans','Noto Sans SC',-apple-system,sans-serif;
+  --radius-lg:16px;--radius-md:12px;--radius-sm:8px;
+  --shadow-card:0 2px 12px rgba(43,58,103,.06);--shadow-hover:0 8px 24px rgba(43,58,103,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);font-size:14px;line-height:1.8;color:var(--text-primary);background:var(--bg-white);-webkit-font-smoothing:antialiased}
+/* cover */
+.cover{height:380px;background:var(--canva-navy);color:#fff;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.cover-bg{position:absolute;inset:0;z-index:1;filter:blur(60px)}
+.blob{position:absolute;border-radius:50%;opacity:.35}
+.blob-1{width:240px;height:240px;background:var(--canva-teal);top:-50px;right:-30px;animation:float1 8s ease-in-out infinite}
+.blob-2{width:180px;height:180px;background:var(--canva-coral);bottom:-30px;left:-10px;animation:float2 10s ease-in-out infinite}
+.blob-3{width:150px;height:150px;background:var(--canva-purple);top:40%;left:15%;animation:float3 12s ease-in-out infinite}
+.blob-4{width:110px;height:110px;background:var(--canva-amber);top:15%;right:28%;animation:float4 9s ease-in-out infinite}
+.blob-5{width:90px;height:90px;background:var(--canva-mint);bottom:20%;right:15%;animation:float1 11s ease-in-out infinite reverse}
+@keyframes float1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-30px,20px) scale(1.1)}66%{transform:translate(20px,-15px) scale(.95)}}
+@keyframes float2{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(25px,-20px) scale(1.08)}66%{transform:translate(-15px,25px) scale(.92)}}
+@keyframes float3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,15px) scale(1.15)}}
+@keyframes float4{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-20px,-20px) scale(1.1)}}
+.cover-inner{position:relative;z-index:2;text-align:center;padding:2rem 3rem}
+.cover-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;color:var(--canva-teal);border:1.5px solid rgba(0,180,216,.5);padding:4px 16px;border-radius:99px;margin-bottom:1.2rem;background:rgba(0,180,216,.08)}
+.cover h1{font-size:40px;font-weight:800;letter-spacing:-.5px;line-height:1.2;margin:0 0 .5rem;padding:0;color:#fff;background:none;border:none;text-shadow:0 2px 20px rgba(0,180,216,.35)}
+.cover h1::after{display:none}
+.cover-brand{font-size:18px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:.4rem}
+.cover-subtitle{font-size:14px;color:rgba(255,255,255,.55);margin-bottom:1.6rem}
+.cover-stats{display:flex;gap:24px;justify-content:center;margin-bottom:1.2rem;flex-wrap:wrap}
+.cover-stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-sm);padding:8px 16px;text-align:center}
+.cover-stat .num{font-size:20px;font-weight:800;color:var(--canva-teal)}
+.cover-stat .label{font-size:10px;color:rgba(255,255,255,.5);letter-spacing:1px}
+.cover-meta{font-size:11px;color:rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.cover-dot{width:3px;height:3px;background:var(--canva-teal);border-radius:50%;display:inline-block}
+/* body */
+.report-body{max-width:820px;margin:0 auto;padding:2.5rem 1.5rem}
+h1{font-size:24px;font-weight:800;color:var(--canva-navy);margin:3rem 0 1.2rem;padding:.8rem 1.2rem;background:linear-gradient(135deg,#eef2ff,#f0f7ff);border-left:5px solid var(--canva-teal);border-radius:0 var(--radius-md) var(--radius-md) 0}
+.section-note{color:var(--text-muted);font-size:13px;margin-bottom:1rem}
+hr{border:none;height:2px;background:linear-gradient(90deg,var(--canva-teal),var(--canva-purple),var(--canva-coral));margin:2.5rem 0;border-radius:1px;opacity:.3}
+/* rank list */
+.rank-list{list-style:none;padding:0;margin:1rem 0}
+.rank-item{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;margin-bottom:10px;background:var(--bg-white);border-radius:var(--radius-md);box-shadow:var(--shadow-card);border:1px solid var(--border-color);transition:box-shadow .2s}
+.rank-item:hover{box-shadow:var(--shadow-hover)}
+.rank-num{flex-shrink:0;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff}
+.rank-num.red{background:var(--canva-coral)}.rank-num.teal{background:var(--canva-teal)}
+.rank-num.amber{background:var(--canva-amber);color:var(--canva-navy)}.rank-num.mint{background:var(--canva-mint)}
+.rank-num.purple{background:var(--canva-purple)}.rank-num.navy{background:var(--canva-navy)}.rank-num.coral{background:var(--canva-coral)}
+.rank-content{flex:1}
+.rank-label{font-size:14px;font-weight:700;color:var(--canva-navy);margin-bottom:4px}
+.rank-desc{font-size:12px;color:var(--text-muted);line-height:1.6}
+.rank-badge{flex-shrink:0;font-size:10px;font-weight:700;letter-spacing:.5px;padding:3px 10px;border-radius:99px;color:#fff;align-self:center}
+.badge-red{background:var(--canva-coral)}.badge-teal{background:var(--canva-teal)}
+.badge-amber{background:var(--canva-amber);color:var(--canva-navy)}.badge-mint{background:var(--canva-mint)}
+.badge-purple{background:var(--canva-purple)}.badge-navy{background:var(--canva-navy)}.badge-coral{background:var(--canva-coral)}
+/* need cards */
+.need-cards{display:grid;grid-template-columns:1fr;gap:14px;margin:1.2rem 0}
+.need-card{background:var(--bg-white);border-radius:var(--radius-md);box-shadow:var(--shadow-card);border:1px solid var(--border-color);padding:18px 20px;display:flex;gap:16px;align-items:flex-start}
+.need-icon{font-size:24px;flex-shrink:0;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.need-content h4{font-size:14px;font-weight:700;color:var(--canva-navy);margin-bottom:6px}
+.need-content p{font-size:13px;color:var(--text-secondary);margin:0;line-height:1.65}
+.need-opp{display:inline-block;font-size:11px;font-weight:600;color:var(--canva-mint);background:rgba(6,214,160,.1);border:1px solid rgba(6,214,160,.3);border-radius:4px;padding:2px 8px;margin-top:6px}
+/* table */
+table{width:100%;border-collapse:separate;border-spacing:0;margin:1.2rem 0 2rem;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-card)}
+thead tr{background:var(--canva-navy)}
+thead th{padding:12px 16px;text-align:left;font-size:11px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,.9);text-transform:uppercase}
+tbody tr:nth-child(even){background:var(--bg-light)}
+tbody td{padding:11px 16px;font-size:13px;color:var(--text-primary);border-bottom:1px solid var(--border-color)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#eef6ff}
+/* alert */
+.alert{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border-radius:var(--radius-md);margin:1rem 0}
+.alert-info{background:#f0f9ff;border:1px solid #bae6fd}
+.alert-success{background:#f0fdf4;border:1px solid #bbf7d0}
+.alert-warning{background:#fff9ee;border:1px solid #ffe29a}
+.alert-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.alert-body{font-size:13px;color:var(--text-secondary);line-height:1.7}
+.alert-body strong{display:block;margin-bottom:2px}
+/* tag */
+.tag-success{background:#e8f5e9;color:#2e7d32}
+.tag-warning{background:#fff3cd;color:#856404}
+.tag-danger{background:#fce4ec;color:#c62828}
+.tag-info{background:#e3f2fd;color:#1565c0}
+.card-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.5px;padding:2px 8px;border-radius:4px;margin-bottom:8px}
+/* brand grid */
+.brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.2rem 0}
+@media(max-width:600px){.brand-grid{grid-template-columns:1fr}}
+.brand-card{background:var(--bg-white);border-radius:var(--radius-md);box-shadow:var(--shadow-card);border:1px solid var(--border-color);overflow:hidden}
+.brand-header{padding:14px 16px}
+.brand-name{font-size:15px;font-weight:800;color:#fff}
+.brand-score{font-size:11px;color:rgba(255,255,255,.7);margin-top:2px}
+.brand-body{padding:14px 16px}
+.brand-desc{font-size:12px;color:var(--text-secondary);line-height:1.6}
+.brand-issue{font-size:12px;color:var(--text-secondary);margin-top:8px;padding-left:16px}
+.brand-issue li{margin-bottom:3px}
+/* comp cards */
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:1.2rem 0}
+.comp-card{background:var(--bg-white);border-radius:var(--radius-md);box-shadow:var(--shadow-card);border:1px solid var(--border-color);padding:16px;border-left:4px solid var(--canva-teal)}
+.comp-card.mid{border-left-color:var(--canva-amber)}
+.comp-card.low{border-left-color:var(--border-color)}
+.comp-brand{font-size:14px;font-weight:800;color:var(--canva-navy);margin-bottom:4px}
+.comp-domain{font-size:11px;color:var(--canva-teal);margin-bottom:6px;font-family:monospace}
+.comp-price{font-size:11px;color:var(--text-muted);margin-bottom:6px}
+.comp-pos{font-size:12px;color:var(--text-secondary);line-height:1.6}
+.comp-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:8px}
+/* trend / keyword grid */
+.kw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:1.2rem 0}
+.kw-card{background:var(--bg-white);border-radius:var(--radius-md);box-shadow:var(--shadow-card);border:1px solid var(--border-color);padding:16px;border-top:3px solid var(--canva-teal)}
+.kw-word{font-size:14px;font-weight:800;color:var(--canva-navy);margin-bottom:4px}
+.kw-meta{font-size:11px;color:var(--text-muted);line-height:1.6}
+.kw-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;color:#fff;background:var(--canva-mint);margin-top:4px}
+/* misc */
+.data-note{background:#f8f9fc;border:1px solid var(--border-color);border-radius:var(--radius-sm);padding:12px 16px;font-size:11px;color:var(--text-muted);margin-top:3rem;line-height:1.7}
+.data-note strong{color:var(--text-secondary)}
+.back-link{display:inline-block;margin:1.5rem 0 0;font-size:13px;font-weight:600;color:var(--canva-teal);text-decoration:none}
+
+
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="cover-bg">
+    <div class="blob blob-1"></div><div class="blob blob-2"></div>
+    <div class="blob blob-3"></div><div class="blob blob-4"></div>
+    <div class="blob blob-5"></div>
+  </div>
+  <div class="cover-inner">
+    <div class="cover-badge">COMPETITOR DISCOVERY REPORT</div>
+    <div class="cover-brand">https://livcrystal.com/</div>
+    <h1>竞品发现报告</h1>
+    <div class="cover-subtitle">天然疗愈水晶手链 / 能量饰品（Energy Bracelet、Constellation、Five Elements、Energy Tree、Energy Stone） · 独立站竞品矩阵</div>
+    <div class="cover-stats"><div class="cover-stat"><div class="num">10</div><div class="label">竞品总数</div></div><div class="cover-stat"><div class="num">4</div><div class="label">高相关竞品</div></div><div class="cover-stat"><div class="num">手链约 $98–105</div><div class="label">甲方价格带</div></div><div class="cover-stat"><div class="num">2026</div><div class="label">采集日期</div></div></div>
+    <div class="cover-meta"><span>Web Search</span><span class="cover-dot"></span><span>Meta Ad Library</span><span class="cover-dot"></span><span>Google</span><span class="cover-dot"></span><span>2026</span></div>
+  </div>
+</div>
+<div class="report-body">
+<a class="back-link" href="index.html">← 返回报告中心</a>
+<h1>竞品全览</h1><table><thead><tr><th>品牌</th><th>域名</th><th>价格带</th><th>相关度</th><th>定位</th></tr></thead><tbody><tr><td>Conscious Items</td><td>https://consciousitems.com/</td><td>待核实（价格 JS 渲染，静态未取到）</td><td>高</td><td>意图导向疗愈水晶手链头部 DTC，按 Protection/Calm/Sleep/Heart 等意图命名（Triple Protection、Quiet My Mind…），与甲方意图分类模式高度重合；自述 50W+ 客户、Trustpilot 4.9</td></tr>
+<tr><td>Energy Muse</td><td>https://energymuse.com/</td><td>待核实</td><td>高</td><td>按意图打包的能量水晶手链套装（Money Magnet、Wealth Bracelet Set 等），意图维度与甲方 Wealth/Abundance 直接对标</td></tr>
+<tr><td>Tiny Rituals</td><td>https://tinyrituals.co/</td><td>待核实</td><td>高</td><td>高调性水晶能量饰品 DTC，内容+产品并重，品牌质感对标</td></tr>
+<tr><td>InJewels Healing Jewelry</td><td>https://injewels.net/</td><td>待核实</td><td>高</td><td>按功效/意图（Prosperity、Success 等）设计的手工疗愈水晶手链，每条附说明卡，意图叙事强</td></tr>
+<tr><td>Elle and Willow</td><td>https://elleandwillow.com/</td><td>待核实</td><td>中高</td><td>波西米亚风意图/脉轮水晶手链与项链，正念+穿搭定位</td></tr>
+<tr><td>Rei of Light Jewelry</td><td>https://reioflightjewelry.com/</td><td>待核实</td><td>中</td><td>注入疗愈能量的手工水晶/Mala 手链，偏精神成长与整体健康叙事</td></tr>
+<tr><td>Buddha Groove</td><td>https://buddhagroove.com/</td><td>待核实</td><td>中</td><td>宝石/水晶疗愈饰品综合店（手链、吊坠、戒指），品类更宽，间接竞品</td></tr>
+<tr><td>Ayana Crystals</td><td>https://ayanacrystals.com/</td><td>待核实</td><td>中</td><td>主打「正品认证」疗愈水晶饰品，真实性背书定位</td></tr>
+<tr><td>Energy Artist Julia</td><td>https://energyartistjulia.com/</td><td>待核实</td><td>中</td><td>创始人 IP（能量艺术家 Julia）背书的能量水晶手链/项链，个人品牌叙事</td></tr>
+<tr><td>New Moon Beginnings</td><td>https://newmoonbeginnings.com/</td><td>待核实</td><td>中</td><td>手工水晶/脉轮组合手链，款式多、偏平价手作</td></tr>
+</tbody></table>
+<hr>
+<h1>高相关竞品（4 家）</h1><p class="section-note">与甲方直接竞争，价格带 / 品类 / 用户群高度重叠</p><div class="comp-grid">
+  <div class="comp-card ">
+    <div class="comp-brand">Conscious Items</div>
+    <div class="comp-domain">https://consciousitems.com/</div>
+    <div class="comp-price">💰 待核实（价格 JS 渲染，静态未取到）</div>
+    <span class="comp-tag tag-info">Web 搜索（intention crystal bracelet）+ scrapling 实抓验证</span>
+    <div class="comp-pos">意图导向疗愈水晶手链头部 DTC，按 Protection/Calm/Sleep/Heart 等意图命名（Triple Protection、Quiet My Mind…），与甲方意图分类模式高度重合；自述 50W+ 客户、Trustpilot 4.9</div>
+    <span class="rank-badge badge-teal" style="margin-top:8px;display:inline-block">相关度 高</span>
+  </div>
+  <div class="comp-card ">
+    <div class="comp-brand">Energy Muse</div>
+    <div class="comp-domain">https://energymuse.com/</div>
+    <div class="comp-price">💰 待核实</div>
+    <span class="comp-tag tag-info">Web 搜索（wealth/abundance intention bracelet）</span>
+    <div class="comp-pos">按意图打包的能量水晶手链套装（Money Magnet、Wealth Bracelet Set 等），意图维度与甲方 Wealth/Abundance 直接对标</div>
+    <span class="rank-badge badge-teal" style="margin-top:8px;display:inline-block">相关度 高</span>
+  </div>
+  <div class="comp-card ">
+    <div class="comp-brand">Tiny Rituals</div>
+    <div class="comp-domain">https://tinyrituals.co/</div>
+    <div class="comp-price">💰 待核实</div>
+    <span class="comp-tag tag-info">Web 搜索（best crystal jewelry brands）</span>
+    <div class="comp-pos">高调性水晶能量饰品 DTC，内容+产品并重，品牌质感对标</div>
+    <span class="rank-badge badge-teal" style="margin-top:8px;display:inline-block">相关度 高</span>
+  </div>
+  <div class="comp-card ">
+    <div class="comp-brand">InJewels Healing Jewelry</div>
+    <div class="comp-domain">https://injewels.net/</div>
+    <div class="comp-price">💰 待核实</div>
+    <span class="comp-tag tag-info">Web 搜索（healing/prosperity bracelet）</span>
+    <div class="comp-pos">按功效/意图（Prosperity、Success 等）设计的手工疗愈水晶手链，每条附说明卡，意图叙事强</div>
+    <span class="rank-badge badge-teal" style="margin-top:8px;display:inline-block">相关度 高</span>
+  </div>
+</div>
+<hr>
+<h1>中等相关竞品（6 家）</h1><p class="section-note">部分重叠，可作为差异化参考</p><div class="comp-grid">
+  <div class="comp-card mid">
+    <div class="comp-brand">Elle and Willow</div>
+    <div class="comp-domain">https://elleandwillow.com/</div>
+    <div class="comp-price">💰 待核实</div>
+    <span class="comp-tag tag-info">Web 搜索（intention jewelry）</span>
+    <div class="comp-pos">波西米亚风意图/脉轮水晶手链与项链，正念+穿搭定位</div>
+    <span class="rank-badge badge-navy" style="margin-top:8px;display:inline-block">相关度 中高</span>
+  </div>
+  <div class="comp-card mid">
+    <div class="comp-brand">Rei of Light Jewelry</div>
+    <div class="comp-domain">https://reioflightjewelry.com/</div>
+    <div class="comp-price">💰 待核实</div>
+    <span class="comp-tag tag-info">Web 搜索（healing crystal bracelets）</span>
+    <div class="comp-pos">注入疗愈能量的手工水晶/Mala 手链，偏精神成长与整体健康叙事</div>
+    <span class="rank-badge badge-amber" style="margin-top:8px;display:inline-block">相关度 中</span>
+  </div>
+  <div class="comp-card mid">
+    <div class="comp-brand">Buddha Groove</div>
+    <div class="comp-domain">https://buddhagroove.com/</div>
+    <div class="comp-price">💰 待核实</div>
+    <span class="comp-tag tag-info">Web 搜索（gemstone jewelry）</span>
+    <div class="comp-pos">宝石/水晶疗愈饰品综合店（手链、吊坠、戒指），品类更宽，间接竞品</div>
+    <span class="rank-badge badge-amber" style="margin-top:8px;display:inline-block">相关度 中</span>
+  </div>
+  <div class="comp-card mid">
+    <div class="comp-brand">Ayana Crystals</div>
+    <div class="comp-domain">https://ayanacrystals.com/</div>
+    <div class="comp-price">💰 待核实</div>
+    <span class="comp-tag tag-info">Web 搜索（authentic healing crystal jewelry）</span>
+    <div class="comp-pos">主打「正品认证」疗愈水晶饰品，真实性背书定位</div>
+    <span class="rank-badge badge-amber" style="margin-top:8px;display:inline-block">相关度 中</span>
+  </div>
+  <div class="comp-card mid">
+    <div class="comp-brand">Energy Artist Julia</div>
+    <div class="comp-domain">https://energyartistjulia.com/</div>
+    <div class="comp-price">💰 待核实</div>
+    <span class="comp-tag tag-info">Web 搜索（energy bracelet）</span>
+    <div class="comp-pos">创始人 IP（能量艺术家 Julia）背书的能量水晶手链/项链，个人品牌叙事</div>
+    <span class="rank-badge badge-amber" style="margin-top:8px;display:inline-block">相关度 中</span>
+  </div>
+  <div class="comp-card mid">
+    <div class="comp-brand">New Moon Beginnings</div>
+    <div class="comp-domain">https://newmoonbeginnings.com/</div>
+    <div class="comp-price">💰 待核实</div>
+    <span class="comp-tag tag-info">Web 搜索（healing crystal bracelets）</span>
+    <div class="comp-pos">手工水晶/脉轮组合手链，款式多、偏平价手作</div>
+    <span class="rank-badge badge-amber" style="margin-top:8px;display:inline-block">相关度 中</span>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
